@@ -4,6 +4,10 @@ import logging
 app = Flask(__name__)
 
 logging.basicConfig(level=logging.INFO)
+@app.route("/contact")
+def contact():
+    app.logger.info("Contact page accessed")
+    return render_template("contact.html")
 
 @app.route("/")
 def home():
